@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #413e4d;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100vh; /* Altura del 100% de la ventana visible */
+  overflow-y: auto;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.labels {
+  transform: translateY(0px);
+  transition: transform 0.5s;
+}
+
+.inputs:focus + .labels,
+.inputs:not(:placeholder-shown) + .labels {
+  margin-top: 8px;
+  transform: translateY(-13px) scale(0.8);
+  transform-origin: top left;
+}
+
+#icon {
+  cursor: pointer;
+}
+
+#alert {
+  animation: EntrarDesdeAbajo 1.3s ease;
+}
+
+@keyframes EntrarDesdeAbajo {
+  from {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .forms input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .alert {
+    margin: auto;
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 1480px) {
+  .forms input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+  }
+
+  .list {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .forms input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+  }
+
+  .list {
+    width: 300px;
+  }
+}
