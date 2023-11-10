@@ -14,7 +14,7 @@ const ViewTable = () => {
     const fetchData = async (page) => {
       try {
         const response = await fetch(
-          `http://localhost:3000/users?_page=${page}&_limit=${limit}`
+          `https://api-json-server-mcdq.onrender.com/users?_page=${page}&_limit=${limit}`
         );
         const data = await response.json();
         setDatos(data);
